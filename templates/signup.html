@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+    <title>Sign Up | Furniture Store</title>
+</head>
+<body>
+    <section class="signup-container">
+        <div class="signup-form-container">
+            <div class="signup-form-top">
+                <h2>Create an Account</h2>
+                <p>Join us and start shopping for your dream furniture</p>
+            </div>
+            <div class="signup-form-bottom">
+                <form method="post" id="signup-form">
+                    {% csrf_token %}
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="confirm-password">Confirm Password</label>
+                        <input type="password" id="confirm-password" name="confirm_password" required>
+                    </div>
+                    <p id="error-message" class="error-message" style="display: none;">Passwords do not match</p>
+                    {% if error %}
+                    <p class="error-message">{{ message }}</p>
+                    {% endif %}
+                    <div class="submit-group">
+                        <button type="submit" class="btn">Sign Up</button>
+                        <p>Already have an account? <a href="{% url 'Users:login' %}">Login</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.getElementById('signup-form').addEventListener('submit', function(event) {
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirm-password').value;
+            var errorMessage = document.getElementById('error-message');
+
+            if (password !== confirmPassword) {
+                errorMessage.style.display = 'block';
+                event.preventDefault();
+            } else {
+                errorMessage.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

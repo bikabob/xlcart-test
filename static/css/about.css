@@ -1,0 +1,120 @@
+.top-rare {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.about-us-container {
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: 20px;
+}
+
+.about-us-header {
+    font-size: 36px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.about-us-paragraph {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-weight: bold;
+    width: 40%;
+    margin: 0 auto;
+}
+
+.about-us-subheader {
+    font-size: 24px;
+    color: #2980b9;
+    margin-top: 40px;
+}
+
+.about-us-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: 12px;
+    margin-top: 12px;
+    width: 40%;
+}
+.about-us-list li{
+    margin-bottom: 12px;
+    margin-top: 12px;
+}
+
+.team-category {
+    font-size: 20px;
+    color: #16a085;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.team-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.team-member {
+    background: #ecf0f1;
+    border: 1px solid #bdc3c7;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    width: calc(33.333% - 40px);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.team-member img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.team-member p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #2c3e50;
+}
+
+.partners-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.partner-logo {
+    flex: 1 1 calc(33.333% - 40px);
+    background: #ecf0f1;
+    border: 1px solid #bdc3c7;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.partner-logo img {
+    width: 100px;
+    height: auto;
+    border-radius: 8px;
+}

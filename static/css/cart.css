@@ -1,0 +1,104 @@
+/* Cart Page Styles */
+
+.cart-page-body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.cart-page-container {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.cart-page-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.cart-page-thead th {
+    text-align: left;
+    padding: 10px;
+    background: #ff523b;
+    color: #fff;
+}
+
+.cart-page-tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-page-info {
+    display: flex;
+    align-items: center;
+}
+
+.cart-page-info img {
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+}
+
+.cart-page-info div {
+    max-width: 250px;
+}
+
+.cart-page-info p {
+    margin: 0;
+    font-weight: bold;
+}
+
+.cart-page-info small {
+    display: block;
+    margin: 5px 0;
+}
+
+.cart-page-info a {
+    color: #ff523b;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.cart-page-total-price {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cart-page-total-price table {
+    border-top: 3px solid #ff523b;
+    width: 100%;
+    max-width: 400px;
+}
+
+.cart-page-total-price table td {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.cart-page-total-price table tr:last-child td {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.cart-page-empty-cart {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.cart-page-empty-cart h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.cart-page-empty-cart .cart-page-btn {
+    display: inline-block;
+    background: #0d6efd;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background 0.3s;
+    text-decoration: none;
+}
+

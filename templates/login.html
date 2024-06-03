@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <title>Login | Furniture Store</title>
+</head>
+<body>
+    <section class="login-container">
+        <div class="login-form-container">
+            <div class="login-form-top">
+                <h2>Welcome Back</h2>
+                <p>Please login to your account</p>
+            </div>
+            <div class="login-form-bottom">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    {% if error %}
+                    <p class="error-message">{{ message }}</p>
+                    {% endif %}
+                    <div class="submit-group">
+                        <button type="submit" class="btn">Login</button>
+                        <p>Don't have an account? <a href="{% url 'Users:signup' %}">Create an Account</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

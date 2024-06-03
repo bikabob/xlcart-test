@@ -1,0 +1,133 @@
+.custom-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffff;
+    padding: 10px;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #333;
+}
+
+
+.navbar-toggler {
+    display: none;
+}
+
+.navbar-collapse {
+    display: flex;
+    align-items: center;
+}
+
+.search-form {
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+}
+
+.form-control {
+    padding: 5px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #0d6efd;
+    color: #fff;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    margin-left: 10px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: rgb(53,55,59);
+    font-weight: bold;
+}
+
+.custom-image {
+    width: 30px;
+    height: auto;
+}
+.custom-navbar2 {
+    background-color: #f8f9fa;
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 45px;
+}
+
+.menu-item {
+    position: relative;
+    margin-right: 20px;
+}
+
+.menu-link {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 10px 15px;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 10px;
+    z-index: 1;
+}
+
+.menu-item:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    margin-bottom: 5px;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 5px 10px;
+    color: #333;
+    text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f0f0f0;
+}
+
+.navbar-brand {
+    width: 70px;
+    margin-left: 20px;
+}
+
+.navbar-brand img {
+    width: 100%;
+}

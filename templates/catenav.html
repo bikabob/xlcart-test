@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation</title>
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+</head>
+<body>
+    <nav class="custom-navbar2">
+        <ul class="menu">
+            {% for category in categories %}
+                <li class="menu-item dropdown">
+                    <span  class="menu-link">{{ category.title }}</span>
+                    <ul class="dropdown-menu">
+                        {% for subcategory in category.children.all %}
+                            <li><a href="{% url 'furniture:category_view' pk=subcategory.id %}">{{ subcategory.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+    
+    
+</body>
+</html>

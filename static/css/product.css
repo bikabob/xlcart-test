@@ -1,0 +1,151 @@
+/* Custom styling for the navbar image */
+.custom-image {
+    width: 40px; /* Adjust size as needed */
+    height: auto;
+}
+
+/* Custom card styling */
+.small-card {
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-bottom: 20px;
+}
+
+.background-section{
+    width: 100%;
+    min-height: 100%;
+    background-image: url('/static/images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    display: flex;
+    align-items: center;
+    padding:50px 10% ;
+ }
+
+.small-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Custom navbar padding */
+
+/* Card image size adjustment */
+.card-img-top {
+    height: 150px; /* Fixed height for all images */
+    object-fit: cover; /* Cover to maintain aspect ratio */
+}
+
+/* Additional styling for product detail page */
+.single-product {
+    margin-top: 50px;
+}
+
+.single-product .price {
+    color: #999;
+    font-size: 20px;
+    margin-top: 20px;
+    text-decoration: line-through; /* Strikethrough style */
+}
+
+.single-product .offer-price {
+    color: #ff523b;
+    font-size: 24px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.single-product .product-detail,
+.single-product .care-instructions {
+    margin-top: 10px;
+}
+
+.small-img-row {
+    display: flex;
+}
+
+.small-img-col {
+    flex: 1;
+    cursor: pointer;
+}
+
+.single-product .price-label,
+.single-product .offer-price-label {
+    display: inline-block;
+    font-size: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.single-product .price-wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+.price {
+    font-size: 1.5em;
+    color: #333;
+    text-decoration: line-through;
+    margin-right: 10px;
+}
+
+.offer-price {
+    font-size: 1.8em;
+    color: #e60000;
+    font-weight: bold;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh; /* Ensures the header takes the full viewport height */
+    text-align: center;
+    background-color:  #0d6efd; /* Replace with your desired background color */
+}
+
+.content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 200px;
+}
+
+.text-container {
+    color: white;
+    font-weight: bold;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+}
+
+.btn1 {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    color: white;
+    background-color: #0d6efd; /* Replace with your desired button color */
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px; /* Optional: for rounded corners */
+}
+
+.container-80 {
+    width: 80%;
+    margin: auto;
+    margin-top: 60px;
+}
+
+.navbar-brand {
+    width: 65px;
+}
+
+.navbar-brand img {
+    width: 100%;
+}
+
+.img-logo {
+    width: 135px;
+}

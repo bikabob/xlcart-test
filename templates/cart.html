@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static './css/cart.css' %}">
+    <title>Cart | Furniture Store</title>
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body class="cart-page-body">
+    <!-- Include the navigation bar -->
+    {% include 'nav.html' %}
+
+    <!-- Cart items details -->
+    <div class="cart-page-container">
+        {% if cart_items %}
+        <table class="cart-page-table">
+            <thead class="cart-page-thead">
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody class="cart-page-tbody">
+                {% for item in cart_items %}
+                <tr>
+                    <td>
+                        <div class="cart-page-info">
+                            <img src="{{ item.image_url }}" alt="{{ item.product_name }}">
+                            <div>
+                                <p>{{ item.product_name }}</p>
+                                <small>Price: ₹{{ item.price }}</small>
+                                <br>
+                                <a href="#" class="remove-button" data-product-id="{{ item.cart_item.id }}">Remove</a>
+                            </div>
+                        </div>
+                    </td>
+                    <td><input type="number" value="{{ item.quantity }}"></td>
+                    <td>₹{{ item.subtotal }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="cart-page-total-price">
+            <table>
+                <tr>
+                    <td>Subtotal</td>
+                    <td>₹{{ subtotal }}</td>
+                </tr>
+                <tr>
+                    <td>Tax</td>
+                    <td>₹{{ tax }}</td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td>₹{{ total }}</td>
+                </tr>
+            </table>
+        </div>
+        {% else %}
+        <div class="cart-page-empty-cart">
+            <h3>Your cart is currently empty.</h3>
+            <a href="/" class="cart-page-btn">Continue Shopping</a>
+        </div>
+        {% endif %}
+    </div>
+
+    
+    <!-- JavaScript -->
+    <script>
+        $(document).ready(function(){
+            $('.remove-button').click(function(e){
+                e.preventDefault();
+                var productId = $(this).data('product-id');
+                var $this = $(this);
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, remove it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            type: "POST",
+                            url: "/remove-product/" + productId + "/",
+                            data: {
+                                csrfmiddlewaretoken: '{{ csrf_token }}'
+                            },
+                            success: function(response) {
+                                if (response.status === 'success') {
+                                    Swal.fire('Deleted!', response.message, 'success').then(() => {
+                                        window.location.reload();
+                                    });
+                                } else {
+                                    Swal.fire('Error!', response.message, 'error');
+                                }
+                            },
+                            error: function(response) {
+                                Swal.fire('Error!', 'An error occurred. Please try again.', 'error');
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

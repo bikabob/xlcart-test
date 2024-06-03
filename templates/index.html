@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your E-commerce Site</title>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/product.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    {% include 'nav.html' %}
+    {% include 'catenav.html' with categories=categories %}
+
+    <div class="header background-section">
+        <div class="content-container">
+            <div class="text-container">
+                <h1>Make Your Comfort is Our Happiness</h1>
+                <a href="#scroll" class="btn">Explore Now &#8594;</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-80" id="scroll">
+        <div class="row">
+            {% for product in instance %}
+            <div class="col-md-3 mb-4">
+                <div class="card h-100 small-card">
+                    <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+                    <div class="card-body">
+                        <h6 class="card-title">{{ product.name }}</h6>
+                        <p class="text-card price">
+                            <span class="original-price">₹{{ product.price }}</span>
+                        </p>
+                        ₹<span>{{ product.offer_price }}</span>
+                        <p class="text-card brand">Brand: <span>{{ product.brand }}</span></p>
+                        <a href="{% url 'furniture:detail_product' pk=product.id %}" class="btn1 btn-primary btn-sm">View Details</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footter-container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download Our App</h3>
+                    <p>Download App for Android and ios mobile phone.</p>
+                    <div class="app-logo">
+                        <img src="{% static 'images/play-store.png' %}">
+                        <img src="{% static 'images/app-store.png' %}">
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <img class="img-logo" src="{% static 'images/logo-main.png' %}">
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+                    </ul>
+                    </div>
+                <div class="footer-col-4">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <a href="https://www.instagram.com/xlcartfurniture" style="text-decoration: none;"><li>Instagram</li></a>
+                        <li>Youtube</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

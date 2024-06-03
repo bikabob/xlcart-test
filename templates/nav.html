@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation</title>
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+</head>
+<body>
+    <nav class="custom-navbar">
+        <a class="navbar-brand" href="#"><img src="{% static 'images/logo.jpg' %}" alt=""></a>
+        
+        <button class="navbar-toggler" type="button" id="navbar-toggler">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse" id="navbar-collapse">
+            <form class="search-form" method="get" action="{% url 'furniture:search_results' %}">
+                <input class="form-control" type="search" placeholder="Search" aria-label="Search" name="q">
+                <button class="btn btn-outline-primary" type="submit">Search</button>
+            </form>
+            
+            
+
+            <div class="right">
+                <div class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </div>
+                {% if user.is_authenticated %}
+                    <div class="nav-item">
+                        <a class="nav-link" href="{% url 'Users:logout' %}">Logout</a>
+                    </div>
+                {% else %}
+                    <div class="nav-item">
+                        <a class="nav-link" href="{% url 'Users:login' %}">Login</a>
+                    </div>
+                    <div class="nav-item">
+                        <a class="nav-link" href="{% url 'Users:signup' %}">Register</a>
+                    </div>
+                {% endif %}
+                <div class="nav-item">
+                    <a class="nav-link" href="#">Support Us</a>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link" href="{% url 'furniture:about' %}">About</a>
+                </div>
+                <div class="nav-item">
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'furniture:cart_view' %}" class="nav-link">
+                        <img src="{% static 'images/cart.png' %}" class="custom-image" alt="Cart">
+                    </a>
+                    {% else %}
+                    <a href="{% url 'Users:login' %}" class="nav-link">
+                        <img src="{% static 'images/cart.png' %}" class="custom-image" alt="Cart">
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+</body>
+</html>
